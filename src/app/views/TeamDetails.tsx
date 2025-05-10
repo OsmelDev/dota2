@@ -5,7 +5,7 @@ interface TeamDetailsProps {
 }
 
 const TeamDetails = ({ id }: TeamDetailsProps) => {
-  return <div>TeamDetails</div>;
+  return <div>{id}</div>;
 };
 
 export default TeamDetails;

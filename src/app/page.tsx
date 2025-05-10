@@ -1,10 +1,4 @@
 "use client";
-
-import NavBar from "@/components/NavBar";
-import { motion } from "framer-motion";
-import videoSrc from "./public/videos/1.mp4";
-import { Lora } from "next/font/google";
-import Card from "@/components/Card";
 import Teams from "@/components/Teams";
 import Link from "next/link";
 

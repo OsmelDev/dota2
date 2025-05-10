@@ -1,4 +1,5 @@
 import { team } from "@/app/types/teams.types";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -35,7 +36,9 @@ const Modal = ({ team, open, setOpen }: ModalProps) => {
           "
           >
             <div className="relative">
-              <img
+              <Image
+                width={100}
+                height={100}
                 className="w-full h-48 object-cover opacity-70"
                 src={
                   team.logo_url ||
@@ -45,7 +48,9 @@ const Modal = ({ team, open, setOpen }: ModalProps) => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent"></div>
               <div className="absolute bottom-4 left-4 flex items-center">
-                <img
+                <Image
+                  width={100}
+                  height={100}
                   className="w-16 h-16 rounded-full border-2 border-yellow-400 bg-gray-800"
                   src={team.logo_url || "https://via.placeholder.com/150"}
                   alt={`${team.name} logo`}

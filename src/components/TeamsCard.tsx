@@ -2,6 +2,7 @@
 import { team } from "@/app/types/teams.types";
 import React, { useState } from "react";
 import Modal from "./Modal";
+import Image from "next/image";
 interface TeamProps {
   team: team;
 }
@@ -15,7 +16,9 @@ export const TeamsCard = ({ team }: TeamProps) => {
         className="max-w-sm rounded-lg overflow-hidden shadow-lg bg-gray-800 border border-purple-600 hover:border-yellow-400 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl"
       >
         <div className="relative">
-          <img
+          <Image
+            width={50}
+            height={48}
             className="w-full h-48 object-cover opacity-70"
             src={
               team.logo_url ||
@@ -27,7 +30,9 @@ export const TeamsCard = ({ team }: TeamProps) => {
           <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent"></div>
 
           <div className="absolute h-[69px] bottom-4 pl-2 pr-2 flex items-center w-full">
-            <img
+            <Image
+              width={16}
+              height={16}
               className={`${
                 team.logo_url === null
                   ? "hidden"

@@ -17,12 +17,17 @@ const ViewMatch = ({ id }: ViewMatchProps) => {
       setMatch(match);
     };
     fetchMatch();
-  }, []);
+  }, [id, viewMatch]);
 
   return (
     <div>
       ViewMatch
-      <iframe src={match?.replay_url} />
+      <iframe
+        src={match?.replay_url}
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+        className="w-full h-[500px] border-0"
+      />
     </div>
   );
 };

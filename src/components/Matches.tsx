@@ -1,5 +1,6 @@
 "use client";
 import { match } from "@/app/types/teams.types";
+import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 
@@ -37,7 +38,7 @@ const Matches = ({ matches }: MatchesProps) => {
       <h3 className="text-xl font-bold text-yellow-400 mb-4">Matches Played</h3>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {getCurrentMatches().map((match) => {
-          let duration = match.duration / 60;
+          const duration = match.duration / 60;
           return (
             <Link
               href={`/match/${match.match_id}`}
@@ -62,8 +63,11 @@ const Matches = ({ matches }: MatchesProps) => {
                 </div>
               </div>
               <div className="flex gap-3 items-center mt-2 text-sm text-gray-300">
-                <img
+                <Image
+                  width={100}
+                  height={100}
                   src={match.opposing_team_logo}
+                  alt={`${match.opposing_team_name} logo`}
                   className="w-[60px] h-[60px]  border-2 border-transparent hover:border-yellow-400 transition-all object-cover rounded-full"
                 />
                 <span>VS: {match.opposing_team_name}/12</span>

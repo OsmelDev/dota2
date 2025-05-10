@@ -1,6 +1,7 @@
 import { team } from "@/app/types/teams.types";
 import React, { useState } from "react";
 import Modal from "./Modal";
+import Image from "next/image";
 
 interface CardProps {
   team: team;
@@ -16,7 +17,9 @@ const Card = ({ team }: CardProps) => {
       >
         <div className="card">
           <div className="wrapper">
-            <img
+            <Image
+              width={200}
+              height={200}
               src={
                 team.logo_url ||
                 "https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
@@ -32,11 +35,13 @@ const Card = ({ team }: CardProps) => {
           >
             {team.name}
           </h2>
-          <img
+          <Image
+            height={100}
+            width={100}
             className={`character ${
               team.logo_url === null
                 ? "hidden"
-                : "w-16 h-16 rounded-full border-2 border-yellow-400 bg-gray-800"
+                : "rounded-full border-2 border-yellow-400 bg-gray-800"
             }`}
             src={team.logo_url || "https://via.placeholder.com/150"}
             alt={`${team.name} logo`}
